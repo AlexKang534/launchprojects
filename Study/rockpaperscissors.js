@@ -1,5 +1,7 @@
 const readline = require("readline-sync");
-const VALID_CHOICES = ["rock", "paper", "scissors"];
+const VALID_CHOICES = ["rock", "paper", "scissors", "lizard", "spock"];
+
+
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -16,17 +18,31 @@ while (true) {
   let computerChoice = VALID_CHOICES[randomIndex];
   prompt(`You chose ${playerOne}, computer chose ${computerChoice}`);
   if (
-    (playerOne === "rock" && computerChoice === "scissors") ||
-    (playerOne === "scissors" && computerChoice === "paper") ||
-    (playerOne === "paper" && computerChoice === "rock")
+    (playerOne === "rock" &&
+      (computerChoice === "scissors" || computerChoice === "lizard")) ||
+    (playerOne === "scissors" &&
+      (computerChoice === "paper" || computerChoice === "lizard")) ||
+    (playerOne === "paper" &&
+      (computerChoice === "rock" || computerChoice === "spock")) ||
+    (playerOne === "lizard" &&
+      (computerChoice === "spock" || computerChoice === "paper")) ||
+    (playerOne === "spock" &&
+      (computerChoice === "scissors" || computerChoice === "rock"))
   ) {
-    prompt(`${playerOne} wins!`);
+    prompt(`You picked ${playerOne} so you win!`);
   } else if (
-    (computerChoice === "rock" && playerOne === "scissors") ||
-    (computerChoice === "scissors" && playerOne === "paper") ||
-    (computerChoice === "paper" && playerOne === "rock")
+    (computerChoice === "rock" &&
+      (playerOne === "scissors" || computerChoice === "lizard")) ||
+    (computerChoice === "scissors" &&
+      (playerOne === "paper" || computerChoice === "lizard")) ||
+    (computerChoice === "paper" &&
+      (playerOne === "rock" || computerChoice === "spock")) ||
+    (computerChoice === "lizard" &&
+      (playerOne === "spock" || playerOne === "paper")) ||
+    (computerChoice === "spock" &&
+      (playerOne === "scissors" || playerOne === "rock"))
   ) {
-    prompt(`${computerChoice} wins!`);
+    prompt(`They picked ${computerChoice} so they win!`);
   } else {
     prompt("It's a tie");
   }
