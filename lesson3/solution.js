@@ -26,7 +26,6 @@ function createRow(startInteger, rowLength) {
 }
 
 //Tests
-
 // row number: 1 --> sum of integers in row: 2
 //row number: 2 --> sum of integers in row: 10
 // row number: 4 --> sum of integers in row: 68
