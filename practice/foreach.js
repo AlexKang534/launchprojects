@@ -1,2 +1,5 @@
-let test = [1, 2, 3].map((num) => num * num);
-console.log(test);
+let journal = 5;
+
+for (let entry of Journal) {
+  console.log(`${entry.events.length} events.`);
+}
