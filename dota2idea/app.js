@@ -37,7 +37,8 @@ function getResults(query) {
 //Display JSON Data into appropriate DOM slots
 function displayResults(profile) {
   let profileInformation = document.querySelector(".profile-url .profile");
-  profileInformation.innerText = JSON.stringify(`${profile}`);
+  let dotaInfo = JSON.stringify(`${profile}`); //Tinker with JSON data, may not be displaying information correctly.
+  profileInformation.innerText = JSON.parse(dotaInfo);
   console.log(profile);
 }
 
